@@ -1,0 +1,40 @@
+ru:
+  activity_report:
+    tab_title: Activity report
+    settings:
+      with_subprojects: Включая подпроекты
+      activity_group_ids: "Группы исполнителей для отчета"
+      activity_user_ids: "Исполнители для отчета"
+      report_user_ids: "Получатели отчета"
+      alarm_priorities: "Приоритеты срочных задач"
+      time_for_reaction: Время на реагирование
+      minutes: "мин"
+      separate_report: "Отправлять отдельный отчет по трекерам"
+      separate_report_description: Удобно использовать, когда вам требуется формировать отдельные отчеты по заданным трекерам
+    mailer:
+      daily:
+        subject: "Ежедневный отчет по затраченному времени за %{date}"
+      weekly:
+        subject: "Еженедельный отчет по затраченному времени с %{from} по %{to}"
+      monthly:
+        subject: "Ежемесячный отчет по затраченному времени с %{from} по %{to}"
+      tracker:
+        daily:
+          subject: "Ежедневный отчет по затраченному времени за %{date} (%{tracker_name})"
+          title: "Ежедневный отчет по затраченному времени за %{date} для трекера \"%{tracker_name}\""
+        weekly:
+          subject: "Еженедельный отчет по затраченному времени с %{from} по %{to} (%{tracker_name})"
+          title: "Еженедельный отчет по затраченному времени с %{from} по %{to} для трекера \"%{tracker_name}\""
+        monthly:
+          subject: "Ежемесячный отчет по затраченному времени с %{from} по %{to} (%{tracker_name})"
+          title: "Ежемесячный отчет по затраченному времени с %{from} по %{to} для трекера \"%{tracker_name}\""
+      total_hours: "Всего часов"
+      total_issues_count: "Всего задач"
+      user: "Исполнитель"
+      hours: "Часов"
+      issues_count: "Задач"
+      issue: "Задача"
+      reaction_time: Время реакции (мин)
+      work_dates: "Даты работы"
+      up_link: "Наверх"
+      up_to: "Наверх к"
