@@ -3,9 +3,7 @@
 
 Based on the originaly Plugin developed by Centos-admin.
 
-The plugin is designed to send daily, weekly and monthly reports of the time spent on projects.
-
-Please help us make this plugin better telling us of any [issues](https://github.com/centosadmin/redmine_activity_report/issues) you'll face using it. We are ready to answer all your questions regarding this plugin.
+The plugin is designed to send daily, weekly and monthly reports of the time spent on projects. We updated to 3.x, based on actual redmine activity report (vs time logged of the original report) and you can also select activities
 
 ## Requirements
 
