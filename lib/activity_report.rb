@@ -14,7 +14,13 @@ module ActivityReport
     end
 
     projects.each do |project|
-      activity_user_ids = project.activity_user_ids
+      activity_user_ids = if period == 'daily'
+                            project.daily_activity_user_ids
+                          elsif period == 'weekly'
+                            project.weekly_activity_user_ids
+                          elsif period == 'monthly'
+                            project.monthly_activity_user_ids
+                          end
 
       users = project.users.where(id: activity_user_ids)
 

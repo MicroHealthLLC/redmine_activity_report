@@ -5,6 +5,9 @@ en:
       with_subprojects: With sub-projects
       activity_group_ids: "Groups for activity report"
       activity_user_ids: "Users for activity report"
+      daily_activity_user_ids: "Users for activity daily report"
+      monthly_activity_user_ids: "Users for activity monthly report"
+      weekly_activity_user_ids: "Users for activity weekly report"
       report_user_ids: "Report receivers"
       alarm_priorities: "Alarm priorities"
       time_for_reaction: Time for reaction
