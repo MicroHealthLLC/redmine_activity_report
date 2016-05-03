@@ -1,8 +1,7 @@
 # Redmine activity report plugin
 
-*[Русская версия документации](README.ru.md)*
 
-Plugin developed by [Centos-admin.ru](http://centos-admin.ru/).
+Based on the originaly Plugin developed by Centos-admin.
 
 The plugin is designed to send daily, weekly and monthly reports of the time spent on projects.
 
