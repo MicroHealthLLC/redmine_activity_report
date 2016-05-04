@@ -13,7 +13,6 @@ class ActivityReportMailer < Mailer
   def report(user, interval, project)
     @project = project
     @author = user
-    params = {user_id: user.id}
     @days = Setting.activity_days_default.to_i
 
 
@@ -26,9 +25,6 @@ class ActivityReportMailer < Mailer
     end
 
     @with_subprojects = @project.activity_report_settings.try(:[], 'with_subprojects').present?
-    if params[:user_id].present?
-      @author = User.active.find(params[:user_id])
-    end
 
     @activity = Redmine::Activity::Fetcher.new(@author, :project => @project,
                                                :with_subprojects => @with_subprojects,
