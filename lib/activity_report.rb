@@ -20,12 +20,19 @@ module ActivityReport
                             project.weekly_activity_user_ids
                           elsif period == 'monthly'
                             project.monthly_activity_user_ids
-                          end
+                            end
+      report_receivers_ids = if period == 'daily'
+                               project.daily_report_user_ids
+                             elsif period == 'weekly'
+                               project.weekly_report_user_ids
+                             elsif period == 'monthly'
+                               project.monthly_report_user_ids
+                             end
 
       users = project.users.where(id: activity_user_ids)
 
       users.each do |user|
-        ActivityReportMailer.report(user, interval, project).deliver_now
+        ActivityReportMailer.report(report_receivers_ids, user, interval, project).deliver_now
       end
 
     end

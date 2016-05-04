@@ -39,6 +39,17 @@
                     </label>
                 <% end %>
                 <%= hidden_field_tag 'activity_report_settings[daily_activity_user_ids][]', '' %>
+
+                <fieldset class="box tabular">
+                  <legend><%= t 'activity_report.settings.report_user_ids' %></legend>
+                  <% @project.users.each do |user| %>
+                      <label class="floating">
+                        <%= check_box_tag 'activity_report_settings[daily_report_user_ids][]', user.id, @project.daily_report_user_ids.try(:include?, user.id.to_s), :id => nil %>
+                        <%= user %>
+                      </label>
+                  <% end %>
+                  <%= hidden_field_tag 'activity_report_settings[daily_report_user_ids][]', '' %>
+                </fieldset>
               </fieldset>
 
               <fieldset class="box tabular">
@@ -50,6 +61,16 @@
                     </label>
                 <% end %>
                 <%= hidden_field_tag 'activity_report_settings[weekly_activity_user_ids][]', '' %>
+                <fieldset class="box tabular">
+                  <legend><%= t 'activity_report.settings.report_user_ids' %></legend>
+                  <% @project.users.each do |user| %>
+                      <label class="floating">
+                        <%= check_box_tag 'activity_report_settings[weekly_report_user_ids][]', user.id, @project.weekly_report_user_ids.try(:include?, user.id.to_s), :id => nil %>
+                        <%= user %>
+                      </label>
+                  <% end %>
+                  <%= hidden_field_tag 'activity_report_settings[weekly_report_user_ids][]', '' %>
+                </fieldset>
               </fieldset>
 
               <fieldset class="box tabular">
@@ -61,6 +82,17 @@
                     </label>
                 <% end %>
                 <%= hidden_field_tag 'activity_report_settings[monthly_activity_user_ids][]', '' %>
+
+                <fieldset class="box tabular">
+                  <legend><%= t 'activity_report.settings.report_user_ids' %></legend>
+                  <% @project.users.each do |user| %>
+                      <label class="floating">
+                        <%= check_box_tag 'activity_report_settings[monthly_report_user_ids][]', user.id, @project.monthly_report_user_ids.try(:include?, user.id.to_s), :id => nil %>
+                        <%= user %>
+                      </label>
+                  <% end %>
+                  <%= hidden_field_tag 'activity_report_settings[monthly_report_user_ids][]', '' %>
+                </fieldset>
               </fieldset>
           <% end %>
 

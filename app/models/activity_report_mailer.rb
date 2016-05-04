@@ -10,7 +10,8 @@ class ActivityReportMailer < Mailer
   helper :activities
   include ActivitiesHelper
 
-  def report(user, interval, project)
+  def report(receivers_ids, user, interval, project)
+    @receivers = User.where(id: receivers_ids).map(&:mail).join(',')
     @project = project
     @author = user
     @days = Setting.activity_days_default.to_i
@@ -40,10 +41,10 @@ class ActivityReportMailer < Mailer
     events = @activity.events(@date_from, @date_to)
     @events_by_day = events.group_by {|event|  @author.time_to_date(event.event_datetime)}
 
-    if @events_by_day.keys.present?
+    if @events_by_day.keys.present? and @receivers.present?
       puts "Sending mail to #{@authos.to_s}"
-      mail to: @author.mail,
-           subject: "#{@project.name}: #{l(:label_activity)}"
+      mail to: @receivers,
+           subject: "#{@project.name}: #{l(:label_activity)} (#{@author} - #{@author.mail})"
     end
   end
 end
