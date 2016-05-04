@@ -30,9 +30,8 @@ module ActivityReport
                              end
 
       users = project.users.where(id: activity_user_ids)
-
-      users.each do |user|
-        ActivityReportMailer.report(report_receivers_ids, user, interval, project).deliver_now
+      if users.present?
+        ActivityReportMailer.report(report_receivers_ids, users, interval, project).deliver_now
       end
 
     end
