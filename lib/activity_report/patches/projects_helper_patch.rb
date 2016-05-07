@@ -40,7 +40,7 @@ module ActivityReport
           tabs.push({name: 'activity_report_settings',
                      action: :manage_activity_report_settings,
                      partial: 'projects/settings/activity_report',
-                     label: 'activity_report.tab_title'}) if User.current.allowed_to?(:manage_activity_report_settings, @project)
+                     label: :activity_report_title}) if User.current.allowed_to?(:manage_activity_report_settings, @project)
 
           tabs
         end
